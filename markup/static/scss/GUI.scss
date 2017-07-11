@@ -13,7 +13,7 @@
 a{
   //color: #e74700;
   //text-decoration: underline;
-  color: #ef9c00;
+  color: #717070;
   cursor: pointer;
   text-decoration: none;
   &:focus {
@@ -23,7 +23,7 @@ a{
     text-decoration: none;
   }
   &:not(.not-styleLink){
-    @include link-border-color(#ef9c00);
+    @include link-border-color(#717070);
   }
   .not-styleLink{
     text-decoration: underline;
@@ -35,6 +35,13 @@ a{
     border-bottom: none;
   }
 }
+.dib{
+  display: inline-block;
+  &_middle{
+    vertical-align: middle;
+  }
+}
+
 
 .rub{
   letter-spacing: -12px;
@@ -145,7 +152,7 @@ ol{
 
 b{
   font-weight: 700;
-  color: #292a3c;
+  color: inherit;
 }
 
 .tableWrap{
@@ -347,16 +354,16 @@ table{
   @include nl;
   font-size: 0;
   line-height: 0;
-  text-align: center;
+  margin: -2px -9px;
   //margin: 10px 0;
   li{
     display: inline-block;
-    padding: 2px;
+    padding: 2px 9px;
     &.slick-active{
       button{
         &:after{
-          //background-color: #ffcb08;
-          border-color: #fff;
+          background-color: #fff;
+          //border-color: #fff;
         }
         &:before{
           opacity: 1;
@@ -374,32 +381,21 @@ table{
       &:after{
         content: '';
         display: block;
-        width: 18px;
-        height: 18px;
+        width: 10px;
+        height: 10px;
         background-color: transparent;
-        border: 1px solid transparent;
+        border: 1px solid #fff;
         border-radius: 50%;
-      }
-      &:before{
-        content: '';
-        width: 8px;
-        height: 8px;
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        margin-top: -4px;
-        margin-left: -4px;
-        opacity: .7;
       }
     }
   }
 }
 
 
-
+@include text-border-bottom('white', #fff);
+@include text-border-bottom('grey', #4d4d4d);
+@include text-border-bottom('orange', #f75c1a);
+@include text-border-bottom('black', #000);
 
 
 

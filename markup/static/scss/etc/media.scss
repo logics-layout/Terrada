@@ -5,11 +5,266 @@ body, html{
   min-width: 320px;
 }
 
+@include my-media-query(max, 1374px) {
+  .header__nav ul li a{
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
-
+  .contact-table__cell_desc {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+  .rightBlock-btn__content-contact {
+    width: 890px;
+  }
+  .contact-slider__main-section {
+    width: 420px;
+  }
+  .contact-table__cell_slider {
+    width: 564px;
+  }
+  .object {
+    &-item {
+      height: 227px;
+    }
+  }
+  .tabs__nav{
+    li {
+      a {
+        font-size: 17px;
+        padding: 13.5px 29px;
+      }
+    }
+  }
+  .object__item-slider-previewBlock{
+    padding-right: 0;
+  }
+  .object__item-desc{
+    position: relative;
+    width: auto;
+  }
+  .object__item-slider{
+    padding-right: 0;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .item-price-block{
+    //text-align: center;
+  }
+  .item-slider{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 14px;
+  }
+  .item-trigger{
+    border: none;
+    padding: 0;
+    text-align: left;
+    margin: 15px 0;
+    .color-black{
+      color: #009fe3;
+      .color-black__title{
+        border-bottom: none;
+      }
+    }
+  }
+  .item-features{
+    display: block;
+    text-align: center;
+    &__row{
+      display: block;
+      +*{
+        margin-top: 15px;
+      }
+    }
+    &__cell{
+      display: block;
+      border-bottom: none;
+      padding: 0;
+      &_title{
+        color: #f75c1a;
+      }
+    }
+  }
+  .item-components{
+    display: none;
+    &:after{
+      display: none;
+    }
+  }
+  .item-components__table{
+    display: block;
+    text-align: center;
+    &-cell{
+      display: block;
+      +*{
+        padding-left: 0;
+      }
+    }
+  }
+  .item-text{
+    text-align: center;
+    font-size: 13px;
+  }
+  .item-features-IScroll{
+    height: auto;
+    padding: 0;
+  }
+  .contact-slider{
+    width: auto;
+    padding: 0;
+    overflow: visible;
+    &__main{
+      float: none;
+      margin: 0 -15px;
+      width: auto;
+      display: block;
+      margin-bottom: 7px;
+      &-section{
+        width: auto;
+        height: 290px;
+      }
+    }
+    &__preview{
+      float: none;
+      margin: -4.5px;
+      font-size: 0;
+      text-align: center;
+      &-section{
+        display: inline-block;
+        padding: 4.5px;
+      }
+      &-imgBlock{
+        width: 65px;
+        height: 65px;
+        &:before{
+          transform: rotate(90deg) scale(0.6);
+        }
+      }
+    }
+  }
+  .object{
+    .col-1,
+    .grid-sizer,
+    .col-2{
+      width: 48.97%;
+    }
+    .row-2 {
+      //height: 466px;
+    }
+  }
+  .object__links{
+    text-align: center;
+    .text-right{
+      text-align: center;
+    }
+  }
+  .slider-index {
+    &__table {
+      display: block;
+      &-cell {
+        display: block;
+        width: auto !important;
+        text-align: center;
+        +*{
+          padding-left: 0;
+          padding-top: 41px;
+        }
+      }
+    }
+  }
+  .slider-index__content{
+    padding-bottom: 97px;
+  }
+  .slider-index-footer__sliderDots{
+    text-align: center;
+    padding: 23px 0;
+  }
+  .slider-index__titleBlock:after{
+    width: 66px;
+    height: 68px;
+    left: -13px;
+    top: -13px;
+  }
+  .slider-index__titleBlock-content{
+    font-size: 25px;
+    padding: 13px 23px;
+    text-align: left;
+  }
+  .slider-index__titleBlock-sub-title{
+    font-size: 17px;
+    font-weight: 300;
+  }
+  .slider-index__titleBlock{
+    line-height: 30px;
+  }
+
+  .tabs__nav{
+    li {
+      a {
+        font-size: 16px;
+        padding: 12px 15px;
+      }
+    }
+  }
+  .advantages {
+    &-list {
+      &__section {
+        width: 33.33%;
+      }
+    }
+  }
+  .mobile-list-anim.active .menuTopMobel{
+    background-color: #f75c1a;
+  }
+  .header {
+    &__table{
+      position: relative;
+      z-index: 4;
+      &.active{
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          bottom: 0;
+          left: 0;
+          display: block;
+        }
+      }
+    }
+    &__poppup {
+      z-index: 3;
+      &-item {
+        width: 100% !important;
+        min-width: inherit;
+        text-align: center;
+        padding-top: 67px;
+        padding-bottom: 42px;
+        border-right: 0;
+        .btn{
+          padding: 17px 38px;
+        }
+      }
+      &-contentPadding{
+        padding: 0 15px;
+      }
+      &-nav{
+        font-size: 19px;
+        li a{
+          padding-top: 9px;
+          padding-bottom: 9px;
+        }
+      }
+    }
+  }
+
+  .header__poppup-nav li.active > a > span {
+    background: #f75c1a;
+  }
 
 }
 
@@ -22,7 +277,9 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, md)) {
-
+  .text-big{
+    font-size: 16px;
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
@@ -34,9 +291,80 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .slider-catalog-item{
+    margin: 0 -15px;
+    display: block;
+    width: auto;
+  }
+  .padding-mobile{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .item-price{
+    font-size: 30px;
+    line-height: normal;
+    &__unit{
+      transform: scale(0.8);
+      transform-origin: left bottom;
+    }
+  }
 
+  .footer{
+    padding: 40px 0;
+  }
+  .youtube-link{
+    font-size: 12px;
+  }
+  .object__item-desc{
+    padding: 40px 30px;
+    margin: 0 -15px;
+    border: none;
+  }
+  .object {
+    &-item {
+      margin-bottom: 15px;
+    }
+    .col-1,
+    .grid-sizer,
+    .col-2,
+    .col-3,
+    .col-4{
+      width: 100%;
+    }
+  }
+  .btn-border {
+    font-size: 14px;
+  }
+
+  .advantages {
+    &-list {
+      &__section {
+        width: 50%;
+      }
+    }
+  }
+  .footer, .footer__copyright{
+    text-align: center;
+  }
+  .copyright{
+    display: block;
+    text-align: center !important;
+    &__cell{
+      display: block;
+      & + * {
+        padding-left: 0;
+        padding-top: 10px;
+      }
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
-
+  .advantages {
+    &-list {
+      &__section {
+        width: 100%;
+      }
+    }
+  }
 }

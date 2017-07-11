@@ -10,6 +10,9 @@ html(class="no-js", lang="ru")
     head
         //- start  block head
         link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+        link(href="%=static=%css/separate-css/PAGE_TRANSITIONS-animations.css", rel="stylesheet", type="text/css")
+        link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+        script(src="%=static=%js/separate-js/jquery.min.js" type="text/javascript")
         block head
         - if(headData)
             +head(headData)
@@ -19,28 +22,97 @@ html(class="no-js", lang="ru")
     body.page
         |%=symbols=%
 
-        section.page__wrapper
-            +header(index)
-            -if(!breadcrumb)
-                .container
-                    br
-                    br
-                    ul.breadcrumb.not-styleLink
-                        li: a(href="#"): span Главная
-                        li: span О компании
-
+        +header(index)
+        .page__wrapper
             //- Include your components here
-            //- start block content
-            block content
-            //- end block content
+            // start block content
+            section.page__wrapper-page
+                block content
+            // end block content
+
+        .rightBlock-btn.hidden-md-down
+            a(href="#").rightBlock-btn__clear
+            .rightBlock-btn__content
+                .rightBlock-btn__content-item.rightBlock-btn__content-item_object#object-popup
+                    a(href="#").rightBlock-btn__content-item-clear.not-styleLink: i.s-clear
+                    .rightBlock-btn__content-object
+                        p.rightBlock-btn__content-title.dib: b Выполненные объекты:
+                        span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        a(href="#").not-styleLink.color-white: span.color-white__title.color-white__title_viewBorder Смотреть весь список объектов
+
+                        br
+                        br
+                        .rightBlock-btn__content-object-list.not-styleLink
+                            .rightBlock-btn__content-object-list-section
+                                a(href='#').rightBlock-btn__content-object-item.text-center
+                                    span.db.rightBlock-btn__content-object-item-img: +img('content/rightBlock-content-object/1')
+                                    span.db.rightBlock-btn__content-object-item-title Переход ДЦ "Бовид" #[br]и Гранд отель "Видгоф"
+                            .rightBlock-btn__content-object-list-section
+                                a(href='#').rightBlock-btn__content-object-item.text-center
+                                    span.db.rightBlock-btn__content-object-item-img: +img('content/rightBlock-content-object/2')
+                                    span.db.rightBlock-btn__content-object-item-title Жилой комплекс#[br]Манхеттон - Челябинск
+                            .rightBlock-btn__content-object-list-section
+                                a(href='#').rightBlock-btn__content-object-item.text-center
+                                    span.db.rightBlock-btn__content-object-item-img: +img('content/rightBlock-content-object/1')
+                                    span.db.rightBlock-btn__content-object-item-title Терраса ресторана#[br]"Pizzamania"
+                            .rightBlock-btn__content-object-list-section
+                                a(href='#').rightBlock-btn__content-object-item.text-center
+                                    span.db.rightBlock-btn__content-object-item-img: +img('content/rightBlock-content-object/3')
+                                    span.db.rightBlock-btn__content-object-item-title Ресторан#[br]Мелиот - Челябинск
+
+                .rightBlock-btn__content-item.rightBlock-btn__content-item_contact#contact-popup
+                    a(href="#").rightBlock-btn__content-item-clear.not-styleLink: i.s-clear
+                    .rightBlock-btn__content-contact.contact
+                        .contact-table
+                            .contact-table__cell.contact-table__cell_slider
+                                .contact-slider
+                                    .contact-slider__main
+                                        .contact-slider__main-section(style="background-image: url('%=static=%img/content/contact/1.jpg');")
+                                    .contact-slider__preview.not-styleLink
+                                        a.contact-slider__preview-section(href='#')
+                                            .contact-slider__preview-imgBlock(style="background-image: url('%=static=%img/content/contact/2.jpg');")
+                                        a.contact-slider__preview-section(href='#')
+                                            .contact-slider__preview-imgBlock(style="background-image: url('%=static=%img/content/contact/3.jpg');")
+                                        a.contact-slider__preview-section(href='#')
+                                            .contact-slider__preview-imgBlock(style="background-image: url('%=static=%img/content/contact/4.jpg');")
+                                        a.contact-slider__preview-section(href='#')
+                                            .contact-slider__preview-imgBlock(style="background-image: url('%=static=%img/content/contact/2.jpg');")
 
 
-            .page__buffer
-        .page__footer
-            +footer()
+                            .contact-table__cell.contact-table__cell_desc
+                                p.rightBlock-btn__content-title.dib.contact__title: b Контакты:
+                                .contact-item-table
+                                    .contact-item-table__row
+                                        .contact-item-table__cell.contact-item-table__cell_icon: +icon('label')
+                                        .contact-item-table__cell г. Челябинск,#[br]ул. 3-го Интернационала#[br]д.90, стр.3
+                                    .contact-item-table__row
+                                        .contact-item-table__cell.contact-item-table__cell_icon: +icon('date')
+                                        .contact-item-table__cell В будни с 9.00 ч. - 18.00 ч.#[br]В сб и вск работаем#[br]по договоренности.
+                                    .contact-item-table__row
+                                        .contact-item-table__cell.contact-item-table__cell_icon: +icon('phone-mobile')
+                                        .contact-item-table__cell.not-styleLink
+                                            a(href='#').db.color-white: span.color-white__title +7 (351) 777-90-68
+                                            a(href='#').db.color-white: span.color-white__title +7 (351) 777-18-66
+                                    .contact-item-table__row
+                                        .contact-item-table__cell.contact-item-table__cell_icon: +icon('email')
+                                        .contact-item-table__cell.not-styleLink
+                                            a(href='#').db.color-white: span.color-white__title.color-white__title_viewBorder info@terrada.ru
+                                hr
+                                .contact-item-table
+                                    .contact-item-table__row
+                                        .contact-item-table__cell.contact-item-table__cell_icon: i.s-hands
+                                        .contact-item-table__cell Выезд на замер платный. Проект террасы предоставляется при покупке доски.
+
+
+            .rightBlock-btn__list
+                button.rightBlock-btn__item(data-toggle='#object-popup')
+                    span.rightBlock-btn__item-icon: i.s-home
+                    | Объекты
+                button.rightBlock-btn__item(data-toggle='#contact-popup')
+                    span.rightBlock-btn__item-icon: +icon('phone')
+                    |Контакты
 
         +modal()
-
         a(href='#').linkTop.not-styleLink
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
@@ -50,9 +122,19 @@ html(class="no-js", lang="ru")
         script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
         script(src="%=static=%js/separate-js/dropdown.js" type="text/javascript")
         script(src="%=static=%js/separate-js/modal.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/modernizr.custom.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/PAGE_TRANSITIONS-animations.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/URI/URI.min.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/URI/jquery.URI.js" type="text/javascript")
+        script(src="%=static=%js/separate-js/logics.js_pageAjaxCore.js" type="text/javascript")
         //- start block script
         block script
         //- end block script
         //- Main scripts. You can replace it, but I recommend you to leave it here
         script(src='%=static=%js/main%=hash=%%=min=%.js')
+
+
+
+
 

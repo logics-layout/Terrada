@@ -1,8 +1,57 @@
 mixin header(data)
     .header(class!=data).not-styleLink
+        .header__table
+            .header__table-cell.header__table-cell_btn
+                button.header__btn-toggle-menu
+                    .mobile-list-anim
+                        input(type="checkbox", id="header-bottom-toggleMenuMbl")
+                        label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                            span.menu-mobile
+                                span.menu-mobile-hamburger.one
+                                span.menu-mobile-hamburger.two
+                                span.menu-mobile-hamburger.three
+            .header__table-cell.text-center
+                a(href="#").header__logo: +img('assets/header/logo', 'png')
+            .header__table-cell.hidden-md-down
+                .header__nav
+                    ul.text-right
+                        li: a(href="#").color-white.color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-1')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Покрытия для террас
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-2')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Каркас
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-3')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Опоры
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-4')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Углы
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-5')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Фасады
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-6')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Ограждения и заборы
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-7')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Мебель
+                        li: a(href="#").color-white
+                            span.header__nav-item
+                                span.hidden-lg-down.header__nav-item-cell: +icon('category-8')
+                                span.header__nav-item-cell: span.header__nav-item-title.color-white__title Ступени
+            .header__table-cell.header__table-cell_btn.hidden-lg-up
+                a(href="#").header__btn-toggle-menu.color-white: +icon('phone')
 
 
-
+        include poppup
 
 
 

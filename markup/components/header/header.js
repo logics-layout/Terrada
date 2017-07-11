@@ -1,23 +1,45 @@
-// var _fnMenuHeaderTop = function(toggle, list, slide) {
-//     var className, el, time;
-//     time = 300;
-//     el = toggle.closest('.mobile-list-anim');
-//     className = 'active';
-//
-//     if (toggle.prop("checked")) {
-//         if(slide) list.stop().slideDown(time);
-//         el.add(list).addClass(className);
-//     } else {
-//         if(slide) list.stop().slideUp(time);
-//         el.add(list).removeClass(className);
-//     }
-// };
-//
-// var menuHeaderTopToggle = $('#header-bottom-toggleMenuMbl');
-// var menuHeaderTopList = $('.header-bottom-nav');
-//
-// menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
-// _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
+var openPopup = function(id, method){
+    var element = $(id),
+        parent = element.closest('.header__poppup'),
+        className = 'active';
+
+
+    if(parent[0] && method){
+        if(method=='clear'){
+            parent.add('.header__table').add(element).removeClass(className);
+        }else if(method=='open'){
+            element.siblings().removeClass(className);
+            parent.add('.header__table').add(element).addClass(className);
+        }
+    }
+};
+
+var clearPopup = function(){
+    $('.header__poppup').removeClass('active');
+    $('.header__poppup-item').removeClass('active');
+};
+
+
+var _fnMenuHeaderTop = function(toggle, list, slide) {
+    var className, el, time;
+    el = toggle.closest('.mobile-list-anim');
+    className = 'active';
+
+    if (toggle.prop("checked")) {
+        el.addClass(className);
+        openPopup(list, 'open');
+    } else {
+        el.removeClass(className);
+        openPopup(list, 'clear');
+    }
+};
+
+var menuHeaderTopToggle = $('#header-bottom-toggleMenuMbl');
+var menuHeaderTopList = $('#navHeader');
+
+menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
+_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
+
 // $(document).click(function(e) {
 //     var target;
 //     target = $(e.target);
@@ -26,54 +48,13 @@
 //         _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
 //     }
 // });
-//
-// $('.header-bottom-nav a').click(function(e){
-//     if($(document).width() > 991) return true;
-//     var _this = $(this),
-//         list = _this.next('ul'),
-//         parent = _this.parent(),
-//         className = 'active',
-//         time = 300;
-//
-//     if(list[0]){
-//         e.preventDefault();
-//         parent.toggleClass(className);
-//         list.slideToggle(time);
-//
-//         parent.siblings().removeClass(className)
-//             .find('ul').slideUp(time);
-//     }
-// });
-//
-// //
-// var header = $('.header'),
-//     headerBottomFix = $('.header-bottom-fix'),
-//     checkPad = true;
-//
-// window.headerHeight = _heightBlock(header);
-// var checkHeaderFix = function(){
-//     // return false;
-//
-//     if($(window).width() < 991){
-//
-//         if($(window).scrollTop() > headerBottomFix.offset().top){
-//             header.addClass('fix');
-//         }else{
-//             header.removeClass('fix');
-//         }
-//
-//         //     if(checkPad){
-//         //         header.addClass('fix');
-//         //         header.css({marginTop: "-"+headerHeight+"px"}).animate({marginTop: "0"}, 500);
-//         //         page__wrapper.css('padding-top', headerHeight+"px");
-//         //         checkPad = false;
-//         //     }
-//         // }else if(checkPad===false){
-//         //     checkPad = true;
-//         //     header.removeClass('fix');
-//         //     page__wrapper.css('padding-top', 0+"px");
-//         //     $('.header-slider-el').slick('slickNext');
-//         //     window.headerHeight = _heightBlock(header);
-//         // }
-//     }
-// };
+
+$('.header__poppup-btnClear, .header__poppup-item__clear').click(clearPopup);
+
+$("[data-toggle='popup']").click(function () {
+   var _this = $(this),
+       popup = _this.attr('data-block');
+    if(popup){
+        openPopup(popup, 'open');
+    }
+});

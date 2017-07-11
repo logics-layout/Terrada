@@ -1,0 +1,59 @@
+.header__poppup
+    a(href='#').header__poppup-btnClear
+    .header__poppup-item.header__poppup-item_flexbox#navHeader
+        ul.header__poppup-nav
+            li: a(href="#"): span.header__poppup-contentPadding: span Главная
+            li.active: a(href="#"): span.header__poppup-contentPadding О компании
+            li: a(href="#"): span.header__poppup-contentPadding: span Каталог продукции
+            li: a(href="#"): span.header__poppup-contentPadding: span Готовые объекты
+        br.hidden-lg-up
+        .header__poppup-contentBottom
+            .header__poppup-contentPadding
+                .dib.text-center
+                    a(href="tel:+73517779068").header__poppup-phone.color-white: span.color-white__title +7 (351) 777 90 68
+                    a(href="tel:+73517771866").header__poppup-phone.color-white: span.color-white__title +7 (351) 777 18 66
+                    .header__poppup-email.hidden-md-down
+                        span Пишите нам:
+                        br
+                        a(href="tel:+73517771866").color-white: span.color-white__title.color-white__title_viewBorder info@terrada.ru
+                    br.hidden-lg-up
+                    button.btn.btn-orange Заказать звонок
+
+    .header__poppup-item(style="width: 424px;")#callback
+        a(href="#").header__poppup-item__clear.hidden-lg-up: i.s-clear
+        .hidden-md-down
+            br
+            br
+            br
+            br
+        .header__poppup-contentPadding
+            form.header__poppup-callback
+                p.header__poppup-callback-title Закажите звонок
+                p.header__poppup-callback-titleSub Мы свяжемся с Вами в ближайшее время
+                .header__poppup-callback-group
+                    input(placeholder="Введите ваше имя").header__poppup-callback-control
+                .header__poppup-callback-group.header__poppup-callback-group_bigMargin
+                    input(placeholder="Укажите номер телефона").header__poppup-callback-control
+                button.btn.btn-orange Заказать звонок
+    .header__poppup-item(style="width: 424px;")#callback-dosc
+        a(href="#").header__poppup-item__clear.hidden-lg-up: i.s-clear
+        br
+        .hidden-md-down
+            br
+            br
+            br
+        .header__poppup-contentPadding
+            form.header__poppup-callback
+                p.header__poppup-callback-title ЗАКАЗ ДОСКИ
+                p.header__poppup-callback-titleSub Мы свяжемся с Вами в ближайшее время
+                .header__poppup-callback-group
+                    input(placeholder="Введите ваше имя").header__poppup-callback-control
+                .header__poppup-callback-group
+                    input(placeholder="Укажите номер телефона").header__poppup-callback-control
+                .header__poppup-callback-group.header__poppup-callback-group_bigMargin
+                    input(placeholder="Введите адрес эл почты").header__poppup-callback-control
+                .header__poppup-callback-group.text-left
+                    label Комментарий к заказу
+                    textarea(rows=4).header__poppup-callback-control
+                button.btn.btn-orange Заказать доску
+

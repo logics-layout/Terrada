@@ -1,0 +1,67 @@
+extends _mainAjax
+
+block head
+    - var headData = {title: "Главная"}
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block contentContent
+    br
+    .row
+        .col-lg-8
+            h1.object__title Переход ДЦ "Бовид" и Гранд отель "Видгоф"
+        .col-lg-4.text-right
+            a(href="#").not-styleLink: span.btn-border Перейти к списку проектов &nbsp;&nbsp;>>
+            br
+            br
+
+    .object__item
+        .object__item-desc
+            .object__item-desc-title О проекте
+            .object__item-desc-text
+                p Наш выбор в сегменте «Эконом». Экономия достигается благодаря уменьшению толщины профиля.
+                p Компания "Террада" предлагает за разумную стоимость в Челябинске купить террасную доску (декинг) из древесно-полимерного композита (ДПК) одного из лучших российских производителей "Pro-Decking" и известного немецкого бренда "Werzalit". Свойства современных досок из композитной древесины позволяют применять изделие для отделки открытой уличной террасы, веранды, беседки или настила у бассейна и других водоемов.
+            .hidden-lg-down
+                br
+                br
+            br
+            button.btn.btn-orange Связаться с нами
+        br.hidden-xl-up
+        .object__item-slider
+            .object__item-slider-main
+                .object__item-slider-main-section: +img('content/object__item-slider/1')
+                .object__item-slider-main-section: +img('content/object__item-slider/1')
+                .object__item-slider-main-section: +img('content/object__item-slider/1')
+                .object__item-slider-main-section: +img('content/object__item-slider/1')
+                .object__item-slider-main-section: +img('content/object__item-slider/1')
+            .hidden-md-down
+                br
+                .object__item-slider-previewBlock
+                    .object__item-slider-preview
+                        .object__item-slider-preview-section: .object__item-slider-preview-img: +img('content/object__item-slider/1-small')
+                        .object__item-slider-preview-section: .object__item-slider-preview-img: +img('content/object__item-slider/1-small')
+                        .object__item-slider-preview-section: .object__item-slider-preview-img: +img('content/object__item-slider/1-small')
+                        .object__item-slider-preview-section: .object__item-slider-preview-img: +img('content/object__item-slider/1-small')
+                        .object__item-slider-preview-section: .object__item-slider-preview-img: +img('content/object__item-slider/1-small')
+    br.hidden-md-down
+    br
+    .object__links
+        .row
+            .col-lg-6.col-xs-12
+                a(href="#").not-styleLink: span.btn-border <<&nbsp;&nbsp; Предыдущий объект
+                br.hidden-md-up
+                span.hidden-sm-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                a(href='#') Жилой комплекс Манхеттон
+                .hidden-lg-up
+                    br
+            .col-lg-6.col-xs-12.text-right
+                a(href='#') Спортивный комплекс СоколФит
+                br.hidden-md-up
+                span.hidden-sm-down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                a(href="#").not-styleLink: span.btn-border.btn-border_orange Следующий объект &nbsp;&nbsp;>>
+    br
+    br
+
+block script
+    script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
+    script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")

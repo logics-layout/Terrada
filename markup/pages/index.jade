@@ -8,48 +8,41 @@ block head
     link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
 
 block content
+    .slider-index
+        .slider-index__section(style="background-image: url('%=static=%img/content/slider-1.jpg');")
+            .slider-index__content
+                .container
+                    .slider-index__table
+                        .slider-index__table-cell.slider-index__table-cell_title
+                            .slider-index__titleBlock
+                                .slider-index__titleBlock-content Террасная доска #[span.db.slider-index__titleBlock-sub-title из ДПК уже в Челябинске!]
+                        .slider-index__table-cell
+                            button.btn.btn-orange.btn-lg(data-toggle='popup', data-block='#callback') Связаться с нами
 
 
-
-
+        .slider-index__section(style="background-image: url('%=static=%img/content/slider-1.jpg');")
+            .slider-index__content
+                .container
+                    .slider-index__table
+                        .slider-index__table-cell.slider-index__table-cell_title
+                            .slider-index__titleBlock
+                                .slider-index__titleBlock-content Террасная доска #[span.db.slider-index__titleBlock-sub-title из ДПК уже в Челябинске!]
+                        .slider-index__table-cell
+                            button.btn.btn-orange.btn-lg(data-toggle='popup', data-block='#callback') Связаться с нами
+    .slider-index-footer
+        .container
+            .row
+                .col-lg-6.col-xs-12
+                    .slider-index-footer__sliderDots
+                .col-lg-6.col-xs-12.not-styleLink.hidden-md-down
+                    br
+                    .text-right
+                        div.dib
+                            a(href="#").slider-index-footer__copyright
+                                span.slider-index-footer__copyright-cell Разработка и продвижение сайта —
+                                span.slider-index-footer__copyright-cell: span.slider-index-footer__copyright-label: b ИНСАЙТ
 
 
 block script
     script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
     script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

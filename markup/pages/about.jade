@@ -1,0 +1,125 @@
+extends _mainAjax
+
+block head
+    - var headData = {title: "Каталог"}
+
+    link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
+
+block contentContent
+    .text-center
+        a(href="#", onclick="getContent('./catalog.html', {animation: 19})").dib.color-grey.not-styleLink
+            span.db: i.s-arrow-top
+            span.color-grey__title.color-grey__title_dashed.color-grey__title_viewBorder Вернуться к выбору доски
+    br
+    br
+    .container
+        .tabs
+            ul.tabs__nav.not-styleLink
+                li.active: a(href='#', data-block='#one'): span Преимущества доски
+                li: a(href='#', data-block='#two'): span Доставка и оплата
+                li: a(href='#', data-block='#one1'): span Видео
+                li: a(href='#', data-block='#one2'): span Отзывы о террасной доске
+
+            .tabs__content
+                .tabs__content-section.active#one
+                    .row
+                        .col-xs-12.col-lg-10
+                            span Компания "Террада" предлагает за разумную стоимость в Челябинске купить террасную доску (декинг) из древесно-полимерного композита (ДПК) одного из лучших российских производителей "Pro-Decking" и известного немецкого бренда "Werzalit". Свойства современных досок из композитной древесины позволяют применять изделие для отделки открытой уличной террасы, веранды, беседки или настила у бассейна и других водоемов.
+                            .hidden-lg-up: br
+                        .col-xs-12.col-lg-2.text-center: +img('content/logo-inner', 'png')
+                .tabs__content-section#two
+                    .row
+                        .col-xs-12.col-lg-10
+                            span Компания "Террада" предлагает за разумную стоимость в Челябинске купить террасную доску (декинг) из древесно-полимерного композита (ДПК) одного из лучших российских производителей "Pro-Decking" и известного немецкого бренда "Werzalit". Свойства современных досок из композитной древесины позволяют применять изделие для отделки открытой уличной террасы, веранды, беседки или настила у бассейна и других водоемов.
+                .tabs__content-section#one1
+                    .row
+                        .col-xs-12.col-lg-10
+                            span Компания "Террада" предлагает за разумную стоимость в Челябинске купить террасную доску (декинг) из древесно-полимерного композита (ДПК) одного из лучших российских производителей "Pro-Decking" и известного немецкого бренда "Werzalit". Свойства современных досок из композитной древесины позволяют применять изделие для отделки открытой уличной террасы, веранды, беседки или настила у бассейна и других водоемов.
+                            .hidden-lg-up: br
+                        .col-xs-12.col-lg-2.text-center: +img('content/logo-inner', 'png')
+                .tabs__content-section#one2
+                    .row
+                        .col-xs-12.col-lg-10
+                            span Компания "Террада" предлагает за разумную стоимость в Челябинске купить террасную доску (декинг) из древесно-полимерного композита (ДПК) одного из лучших российских производителей "Pro-Decking" и известного немецкого бренда "Werzalit". Свойства современных досок из композитной древесины позволяют применять изделие для отделки открытой уличной террасы, веранды, беседки или настила у бассейна и других водоемов.
+                            .hidden-lg-up: br
+                        .col-xs-12.col-lg-2.text-center: +img('content/logo-inner', 'png')
+
+        br
+        br
+        .advantages-list
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-1')
+                    .advantages__item-title: b Прочность
+                    .advantages__item-text Высокий запас прочности к повреждениям при длительной эксплуатации
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-2')
+                    .advantages__item-title: b Устойчивость
+                    .advantages__item-text Устойчива к образованию грибка, плесени и атакам насекомых вредителей
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-3')
+                    .advantages__item-title: b Антискольжение
+                    .advantages__item-text Сложный рельеф для удаления влаги обеспечивающий антискольжение при ходьбе
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-4')
+                    .advantages__item-title: b Влагостойкость
+                    .advantages__item-text Высокая влагостойкость (не впитывает и не выделяет влагу)
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-5')
+                    .advantages__item-title: b Морозостойкость
+                    .advantages__item-text Морозостойкость изделиядо -50°C
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-6')
+                    .advantages__item-title: b Жаростойкость
+                    .advantages__item-text Жаростойкость от +70° С (кратковременно до +120° С)
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-7')
+                    .advantages__item-title: b Нагрузка
+                    .advantages__item-text Максимальная нагрузкана поверхность до 500 кг/м²
+            .advantages-list__section
+                .advantages__item.text-center
+                    .advantages__item-icon: span: +icon('advantages-8')
+                    .advantages__item-title: b Натуральность
+                    .advantages__item-text Имитация фактуры натурального дерева
+
+    br
+    br
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,11 +1,13 @@
-var footerHeight = null,
-    footer = $('.page__footer'),
-    page__wrapper = $('.page__wrapper'),
-    page__buffer = $('.page__buffer');
-
 var checkFooterHeight = function(){
-    footerHeight = _heightBlock(footer);
-    page__wrapper.css("margin-bottom", "-"+footerHeight+"px");
-    page__buffer.css("height", ""+footerHeight+"px");
+    var footer = $('.page__content-footer');
+    // console.log(footer.closest(''));
+    footer.filter(':visible').each(function () {
+        var _this = $(this),
+            footerHeight = _this[0].offsetHeight;
+        
+        if(_this.closest('.page__wrapper-page.pt-page-current')[0]){
+            _this.closest('.page__content').css("padding-bottom", footerHeight+"px");
+        }
+    });
 };
 checkFooterHeight();

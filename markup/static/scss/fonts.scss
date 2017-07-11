@@ -13,33 +13,21 @@
 // 800 -> Heavy, Extra Bold
 // 900 -> Black
 
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Black", $file-formats: eot woff ttf svg){
+@include font-face("PFAgoraSansPro", "../fonts/PFAgoraSansPro/ofont.ru_pf_agora_sans_pro-webfont", $file-formats: woff woff2){
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
 };
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Bold", $file-formats: eot woff ttf svg){
-  font-style: normal;
-  font-weight: bold;
-};
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Light", $file-formats: eot woff ttf svg){
+@include font-face("PFAgoraSansPro", "../fonts/PFAgoraSansPro/pfagorasanspro-light-webfont", $file-formats: woff woff2){
   font-style: normal;
   font-weight: 300;
 };
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium", $file-formats: eot woff ttf svg){
+@include font-face("PFAgoraSansPro", "../fonts/PFAgoraSansPro/pfagorasanspro-medium-webfont", $file-formats: woff woff2){
   font-style: normal;
   font-weight: 500;
 };
 
-//@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman", $file-formats: eot woff ttf svg){
-//  font-style: normal;
-//  font-weight: bold;
-//};
-
-@include font-face("HelveticaNeueCyr", "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Thin", $file-formats: eot woff ttf svg){
+@include font-face("PT Sans", "../fonts/ptSans/pts75f_w_0-webfont", $file-formats: woff woff2){
   font-style: normal;
-  font-weight: 100;
+  font-weight: 400;
 };
 
