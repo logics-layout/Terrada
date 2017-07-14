@@ -44,15 +44,25 @@ window.PageTransitions = (function() {
 
         newBock.html(html);
 
-        $pages = $main.append(newBock).children( "."+classNamePage );
-        pagesCount = $pages.length;
-        init(newBock);
-        animation = options.animation;
-        // console.log(animation);
-        nextPage({
-            animation: animation,
-            showPage: newBock.index()
-        }).trigger('loadAjax');
+        function nextAction() {
+            $pages = $main.append(newBock).children( "."+classNamePage );
+            pagesCount = $pages.length;
+            init(newBock);
+            animation = options.animation;
+            // console.log(animation);
+            nextPage({
+                animation: animation,
+                showPage: newBock.index()
+            }).trigger('loadAjax');
+        }
+
+        if($.fn.imagesLoaded){
+            newBock.imagesLoaded().always(nextAction);
+        }else{
+            nextAction();
+        }
+
+
     }
 
     function loadAjax(url, options, addEntry){
